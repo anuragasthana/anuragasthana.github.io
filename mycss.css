@@ -1,0 +1,94 @@
+body {
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	background: url(assets/headers/headerbackground.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  align: center;
+}
+
+
+
+header {
+  text-align: center;
+	padding: 1% 1.5% 1% 1.5%;
+}
+
+nav {
+  list-style-type: none;
+  margin: 0;
+  /*padding: 0 31% 0 31%;*/
+	width: 100%;
+  text-align: center;;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+li {
+    float: left;
+    padding-top: 1%;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 0em 1.25em;
+    text-decoration: none;
+    font-size: 110%;
+}
+
+nav ul li {
+	display: inline;
+}
+
+table {
+  align: center;
+  cellpadding: 5%;
+  cellspacing: 0;
+  width: 100%;
+}
+
+footer {
+	clear: both;
+}
+
+table p {
+  padding: 1em;
+  align: center;
+}
+
+p{
+  padding: 0 5% 0 5%;
+  font-size: 150%;
+}
+
+h1{
+  font-size: 250%;
+}
+h1, h2, h3, h4, h5, h6 {
+	align: center;
+}
+
+
+
+a:link, a:visited {
+	color: #FFFFFF;
+}
+
+a:link, a:visited {
+	color: #FFFFFF;
+}
+
+p, h2, h1, h4 {
+	color: #FFFFFF;
+}
