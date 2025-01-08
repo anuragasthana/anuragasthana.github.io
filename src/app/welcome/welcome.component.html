@@ -1,0 +1,14 @@
+<!-- <div *ngIf="!isRemoved()" 
+         class="welcome-screen"
+         [@fadeInOut]>
+      <h1>Welcome</h1>
+</div> -->
+
+<div class="welcome-wrapper">
+    <div 
+      class="welcome-container" 
+      [@welcomeAnimation]="animationState" 
+      *ngIf="!isRemoved()">
+      <h1>Welcome</h1>
+    </div>
+</div>
