@@ -4,9 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 
-export const routes: Routes = [
-  {path: '', component:AppComponent}
-];
+export const routes: Routes = [];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })],
