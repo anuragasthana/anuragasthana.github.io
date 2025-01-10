@@ -1,3 +1,15 @@
-<div class="home-message" [@fadeIn]>
-    <h1>Anurag Asthana</h1>
+<div class="home-container">
+
+    <div class="home-message" [@fadeIn]>
+        <h1>Anurag Asthana</h1>
+    </div>
+
+
+    <nav class="bubble-nav">
+        <a *ngFor="let bubble of navBubbles" [routerLink]="bubble.link" class="bubble"
+            [style.background-color]="bubble.color" [style.top]="bubble.position.top"
+            [style.left]="bubble.position.left" [@bubbleHover]="'idle'">
+            {{ bubble.text }}
+        </a>
+    </nav>
 </div>

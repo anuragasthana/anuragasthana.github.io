@@ -1,15 +1,51 @@
-.home-message {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 1;
-    text-align: center;
-  }
+.home-container {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background: #000;
+}
 
-  h1 {
-    font-size: 60pt;
-    color: #dfdfdf;
-    margin: 0;
-    padding: 0;
-  }
+.home-message {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 1;
+  text-align: center;
+  z-index: 1;
+}
+
+h1 {
+  font-size: 60pt;
+  color: #dfdfdf;
+  margin: 0;
+  padding: 0;
+}
+
+.bubble-nav {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.bubble {
+  position: absolute;
+  width: 500px;  /* Much larger bubbles */
+  height: 500px; /* Much larger bubbles */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 2.5rem; /* Larger font size */
+  text-align: center;
+  transition: transform 0.3s ease;
+  z-index: 2;
+}
+
+.bubble:hover {
+  transform: scale(1.3);
+}
