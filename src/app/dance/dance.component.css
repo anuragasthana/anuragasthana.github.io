@@ -1,0 +1,12 @@
+.page-container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 2rem);
+}
+
+.page-title {
+  font-size: 4rem;
+  font-weight: bold;
+}
