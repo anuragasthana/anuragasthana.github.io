@@ -7,7 +7,7 @@ import { RouterLinkActive, RouterOutlet, RouterModule } from '@angular/router';
   standalone: true,
   imports: [RouterOutlet, NgFor, NgStyle, RouterLinkActive, RouterModule],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
 })
 export class AppComponent {
   title = 'personal-website';
@@ -22,7 +22,8 @@ export class AppComponent {
   }> = [];
 
   private readonly GRID_CELLS = 6; // Divide screen into 6x6 grid
-  private gridOccupancy: boolean[][] = Array(this.GRID_CELLS).fill(false)
+  private gridOccupancy: boolean[][] = Array(this.GRID_CELLS)
+    .fill(false)
     .map(() => Array(this.GRID_CELLS).fill(false));
 
   constructor() {
@@ -33,7 +34,8 @@ export class AppComponent {
 
   generateBubbles() {
     // Reset grid occupancy
-    this.gridOccupancy = Array(this.GRID_CELLS).fill(false)
+    this.gridOccupancy = Array(this.GRID_CELLS)
+      .fill(false)
       .map(() => Array(this.GRID_CELLS).fill(false));
 
     this.bubbles = [];
@@ -43,7 +45,7 @@ export class AppComponent {
     while (this.bubbles.length < 15 && attempts < maxAttempts) {
       const size = Math.random() * 250 + 20;
       const left = Math.random() * 100;
-      
+
       // Convert position to grid coordinates
       const gridX = Math.floor((left / 100) * this.GRID_CELLS);
       const gridY = Math.floor(Math.random() * this.GRID_CELLS);
@@ -55,8 +57,10 @@ export class AppComponent {
           const checkX = gridX + dx;
           const checkY = gridY + dy;
           if (
-            checkX >= 0 && checkX < this.GRID_CELLS &&
-            checkY >= 0 && checkY < this.GRID_CELLS &&
+            checkX >= 0 &&
+            checkX < this.GRID_CELLS &&
+            checkY >= 0 &&
+            checkY < this.GRID_CELLS &&
             this.gridOccupancy[checkX][checkY]
           ) {
             canPlace = false;
@@ -71,7 +75,7 @@ export class AppComponent {
           size,
           left,
           delay: Math.random() * -20,
-          duration: Math.random() * 10 + 15
+          duration: Math.random() * 10 + 15,
         });
       }
 
@@ -83,8 +87,17 @@ export class AppComponent {
     this.isMobile = window.innerWidth <= 768;
   }
 
+  handleKeydown(event: KeyboardEvent) {
+    // Toggle on Space or Enter
+    if (event.key === ' ' || event.key === 'Enter') {
+      event.preventDefault(); // Prevent page scroll on space
+      this.toggleAnimation();
+    }
+  }
+
   toggleAnimation() {
     this.isPaused = !this.isPaused;
+    console.log(this.isPaused);
   }
 
   getBubbleStyles(bubble: any) {
@@ -93,7 +106,7 @@ export class AppComponent {
       height: `${bubble.size}px`,
       left: `${bubble.left}%`,
       animationDelay: `${bubble.delay}s`,
-      animationDuration: `${bubble.duration}s`
+      animationDuration: `${bubble.duration}s`,
     };
   }
 }

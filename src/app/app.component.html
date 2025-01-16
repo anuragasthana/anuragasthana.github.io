@@ -22,9 +22,11 @@
       </li>
       <li>
         <a routerLink="/projects" aria-label="Projects" routerLinkActive="active" rel="expect">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-            stroke-width="2">
-            <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+            <line x1="8" y1="21" x2="16" y2="21"></line>
+            <line x1="12" y1="17" x2="12" y2="21"></line>
           </svg>
         </a>
       </li>
@@ -54,10 +56,13 @@
     <router-outlet></router-outlet>
   </main>
 
-  <label class="toggle-switch" aria-label="Toggle background animation">
-    <input type="checkbox" [checked]="!isPaused" (change)="toggleAnimation()" aria-label="Toggle animation"
-      aria-pressed="!isPaused">
+  <label class="toggle-switch" role="switch" [attr.aria-checked]="!isPaused" tabindex="0"
+    (keydown)="handleKeydown($event)">
+    <input type="checkbox" [checked]="!isPaused" (change)="toggleAnimation()" aria-hidden="true">
     <span class="slider"></span>
+    <span class="sr-only">
+      {{isPaused ? 'Enable' : 'Disable'}} background animation
+    </span>
   </label>
 
   <div class="bubble-container">
