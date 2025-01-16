@@ -60,9 +60,6 @@
     (keydown)="handleKeydown($event)">
     <input type="checkbox" [checked]="!isPaused" (change)="toggleAnimation()" aria-hidden="true">
     <span class="slider"></span>
-    <span class="sr-only">
-      {{isPaused ? 'Enable' : 'Disable'}} background animation
-    </span>
   </label>
 
   <div class="bubble-container">
